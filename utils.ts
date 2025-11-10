@@ -1,5 +1,10 @@
 import { MediaFile, SortOption } from './types';
 
+/**
+ * Determines the media type based on file extension
+ * @param filename - The name of the file including extension
+ * @returns 'image', 'video', or null if not a supported media type
+ */
 export const getMediaType = (filename: string): 'image' | 'video' | null => {
   const lowerName = filename.toLowerCase();
   
@@ -16,6 +21,12 @@ export const getMediaType = (filename: string): 'image' | 'video' | null => {
   return null;
 };
 
+/**
+ * Sorts media files based on the specified sort option
+ * @param files - Array of media files to sort
+ * @param sortBy - Sort method: 'name', 'date', or 'random'
+ * @returns Sorted array of media files
+ */
 export const sortMediaFiles = (files: MediaFile[], sortBy: SortOption): MediaFile[] => {
   const sortedFiles = [...files];
   
@@ -31,7 +42,7 @@ export const sortMediaFiles = (files: MediaFile[], sortBy: SortOption): MediaFil
       });
     
     case 'random':
-      // Fisher-Yates shuffle
+      // Fisher-Yates shuffle algorithm
       for (let i = sortedFiles.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [sortedFiles[i], sortedFiles[j]] = [sortedFiles[j], sortedFiles[i]];

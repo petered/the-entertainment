@@ -39,3 +39,8 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Compiled TypeScript files (keep index.ts which is needed)
+types.js
+utils.js
+MediaPlayer.js
