@@ -1,3 +1,17 @@
+/**
+ * The Entertainment - Media Gallery Player
+ * 
+ * A React Native application for playing images and videos in sequence
+ * with configurable sorting and duration options.
+ * 
+ * Features:
+ * - Multi-file selection
+ * - Sequential playback (images and videos)
+ * - Sort by name, date, or random
+ * - Configurable image duration
+ * - Full-screen playback
+ */
+
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
